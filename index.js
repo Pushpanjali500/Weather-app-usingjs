@@ -2,6 +2,7 @@ let result=document.getElementById("result");
 let searchbtn=document.getElementById("search-btn");
 let cityRef=document.getElementById("city");
 //function to fetch weather details from api and display them
+const api_key = process.env.api_key;
 let getWeather=()=>{
     let cityValue=cityRef.value;
     result.classList.add("none")
@@ -10,7 +11,7 @@ let getWeather=()=>{
         result.innerHTML=`<h3 class="msg">Please enter a city name</h3>`
     }
     else{
-        let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityValue}&appid=${key}&units=metric`;
+        let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityValue}&appid=${api_key}&units=metric`;
        //clear the input vfield
        cityRef.value="";
         fetch(url).then((
