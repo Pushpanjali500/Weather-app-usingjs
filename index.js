@@ -1,6 +1,7 @@
 let result=document.getElementById("result");
 let searchbtn=document.getElementById("search-btn");
 let cityRef=document.getElementById("city");
+
 //function to fetch weather details from api and display them
 let getWeather=()=>{
     let cityValue=cityRef.value;
